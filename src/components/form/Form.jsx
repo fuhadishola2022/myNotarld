@@ -8,7 +8,7 @@ function Form() {
     <div className='form'>
          <div className="form-wrapper">
             <div className="form-wrapper-top">
-                <Icon />
+                <Icon className='icon'/>
             <span>[ Welcome Back ]</span>
             </div>
 

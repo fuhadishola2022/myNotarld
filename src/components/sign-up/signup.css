@@ -45,6 +45,8 @@
     font-weight: 400;
 }
 
+
+
 #signup-details{
     width: 100%;
 }
@@ -103,4 +105,144 @@
 .login-opt a:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+@media screen  and (max-width: 1080px){
+    .signup-wrapper{
+        width: 60%;
+        height: 50%;
+        padding: 15px;   
+    }
+    
+}
+@media screen  and (max-width: 800px) and (max-width: 800){
+    .signup-wrapper{
+        width: 60%;
+        height: 50%;
+        padding: 15px;   
+    }
+    
+}
+
+@media screen  and (max-width: 700px){
+    .signup-wrapper{
+        width: 60%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+@media screen  and (max-width: 600px){
+    .signup-wrapper{
+        width: 80%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+
+@media screen  and (max-width: 650px){
+    .signup-wrapper{
+        width: 67%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+@media screen  and (max-width: 550px){
+    .signup-wrapper{
+        width: 80%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+@media screen  and (max-width: 540px){
+    .signup-wrapper{
+        width: 80%;
+        height: 60%;
+        padding: 15px;   
+    } 
+}
+@media screen  and (max-width: 480px){
+    .form-wrapper{
+        width: 90%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+@media screen  and (max-width: 450px){
+    .form-wrapper{
+        width: 85%;
+        height: 40%;
+        padding: 15px;   
+    } 
+}
+
+@media screen  and (max-width: 414px){
+    .signup-wrapper{
+        width: 90%;
+        height: 50%;
+        padding: 15px;   
+    } 
+
+    .signup-wrapper-top span{
+
+        font-size: 12pt;
+       
+    }
+
+    .signup-wrapper-top .icon{
+        font-size: 12pt;
+    }
+}
+@media screen  and (max-width: 390px){
+    .signup-wrapper{
+        width: 90%;
+        height: 50%;
+        padding: 15px;   
+    } 
+
+    .signup-wrapper-top span{
+
+        font-size: 10pt;
+        margin-left: 10px;
+       
+    }
+
+    .signup-wrapper-top .icon{
+        font-size: 10pt;
+    }
+}
+@media screen  and (max-width: 360px){
+    .signup-wrapper{
+        width: 90%;
+        height: 50%;
+        padding: 15px;   
+    } 
+
+    .signup-wrapperp span{
+
+        font-size: 8pt;
+        margin-left: 10px;
+       
+    }
+
+    .signup-wrapper-top .icon{
+        font-size: 10pt;
+    }
+}
+@media screen  and (max-width: 375px){
+    .signup-wrapper{
+        width: 95%;
+        height: 50%;
+        padding: 15px;   
+    } 
+
+    .signup-wrapper-top span{
+
+        font-size: 10pt;
+        margin-left: 10px;
+       
+    }
+
+    .signup-wrapper-top .icon{
+        font-size: 10pt;
+    }
 }
