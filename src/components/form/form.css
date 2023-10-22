@@ -1,0 +1,134 @@
+.form{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrapper{
+    width: 33%;
+    height: 60%;
+    background-color: rgba(225, 225, 225, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    /* text-align: center; */
+    
+}
+
+.form-wrapper-top{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.form-wrapper-top a{
+    font-size: 26pt;
+    margin-right: 30px;
+    color: white;
+    font-weight: 600;
+    left: 0;
+}
+
+.form-wrapper-top span{
+
+    font-size: 16pt;
+    margin-right: 10px;
+    color: #c5c7ca;
+    font-weight: 400;
+   
+   
+}
+
+
+label{
+    font-size: 14pt;
+    margin-bottom: 5px;
+    color: #c5c7ca;
+    
+}
+
+
+
+#login-form{
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+#email, #password{
+    width: 90%;
+    padding: 15px;
+    background-color: #131319;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px
+    
+}
+
+::placeholder{
+    color: whitesmoke;
+    font-size: 12pt;
+    color: #c5c7ca;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    filter: opacity(40%);
+    
+}
+
+.login-btn{
+    width: 90%;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: rgb(148 163 184);
+    border: none;
+    font-size: 13pt;
+    color: white;
+    border-radius: 5px;
+    font-weight: 300;
+}
+
+form input:focus{
+    outline: none;
+}
+
+.email-div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.password-div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.options{
+    margin-top: 20px;
+    text-align: center;
+    width: 90%;
+    color: #c5c7ca;
+}
+
+.options a{
+    margin-top: 20px;
+    text-align: center;
+    width: 90%;
+    color: #c5c7ca;
+    text-decoration: none;
+}
+
+.options a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+

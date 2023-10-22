@@ -1,0 +1,106 @@
+.sign-Up{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-wrapper{
+    width: 32%;
+    height: 90vh;
+    background-color: rgba(225, 225, 225, 0.1);
+    border-radius: 5px;
+    padding: 15px;
+    overflow-y: scroll;
+    /* display: block;
+    align-items: center;
+    justify-content: center; */
+
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    height: 20%;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+}
+
+.signup-wrapper-top{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.signup-wrapper-top span{
+    font-size: 14pt;
+    margin-right: 10px;
+    color: #c5c7ca;
+    font-weight: 400;
+}
+
+#signup-details{
+    width: 100%;
+}
+
+#signup-details > div{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#signup-details > div > p{
+    color: crimson;
+    position: relative;
+    top: -10px;
+}
+
+#signup-details input{
+    width: 100%;
+    padding: 15px;
+    background-color: #131319;
+    border: none;
+    font-size: 14pt;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px
+}
+
+#reg-sumbit{
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #4a96ff;
+    border: none;
+    font-size: 13pt;
+    color: white;
+    border-radius: 5px;
+    font-weight: 300;
+}
+
+#reg-sumbit:hover{
+    background-color: rgb(23, 23, 244);
+}
+
+.login-opt{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    color: #c5c7ca;
+}
+
+.login-opt a{
+    color: #c5c7ca;
+    text-decoration: none;
+}
+
+.login-opt a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
