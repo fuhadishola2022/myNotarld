@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .signup-wrapper{
@@ -13,6 +14,7 @@
     border-radius: 5px;
     padding: 15px;
     overflow-y: scroll;
+    overflow-x: hidden;
     /* display: block;
     align-items: center;
     justify-content: center; */
@@ -63,6 +65,10 @@
     top: -10px;
 }
 
+.user-email{
+    margin-top: 5px;
+}
+
 #signup-details input{
     width: 100%;
     padding: 15px;
@@ -107,142 +113,56 @@
     cursor: pointer;
 }
 
-@media screen  and (max-width: 1080px){
-    .signup-wrapper{
-        width: 60%;
-        height: 50%;
-        padding: 15px;   
-    }
-    
-}
-@media screen  and (max-width: 800px) and (max-width: 800){
-    .signup-wrapper{
-        width: 60%;
-        height: 50%;
-        padding: 15px;   
-    }
-    
+.success{
+    text-transform: capitalize;
+    color: green;
+    font-size: 12pt;
+    margin-top: -10px;
 }
 
-@media screen  and (max-width: 700px){
-    .signup-wrapper{
-        width: 60%;
-        height: 40%;
-        padding: 15px;   
-    } 
+.fail{
+    text-transform: capitalize;
+    color: red;
+    font-size: 12pt;
+    margin-top: -10px;
 }
-@media screen  and (max-width: 600px){
+
+@media screen and (max-width: 1046px){
+    .signup-wrapper{
+        width: 43%;
+    }
+}
+@media screen and (max-width: 833px){
+    .signup-wrapper{
+        width: 48%;
+    }
+}
+@media screen and (max-width: 700px){
+    .signup-wrapper{
+        width: 55%;
+    }
+}
+@media screen and (max-width: 600px){
+    .signup-wrapper{
+        width: 65%;
+    }
+}
+@media screen and (max-width: 512px){
     .signup-wrapper{
         width: 80%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-
-@media screen  and (max-width: 650px){
-    .signup-wrapper{
-        width: 67%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 550px){
-    .signup-wrapper{
-        width: 80%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 540px){
-    .signup-wrapper{
-        width: 80%;
-        height: 60%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 480px){
-    .form-wrapper{
-        width: 90%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 450px){
-    .form-wrapper{
-        width: 85%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-
-@media screen  and (max-width: 414px){
-    .signup-wrapper{
-        width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
+    }
 
     .signup-wrapper-top span{
-
-        font-size: 12pt;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 12pt;
+        display: none;
     }
 }
-@media screen  and (max-width: 390px){
+@media screen and (max-width: 360px){
     .signup-wrapper{
         width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
+    }
 
     .signup-wrapper-top span{
-
-        font-size: 10pt;
-        margin-left: 10px;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
+        display: none;
     }
 }
-@media screen  and (max-width: 360px){
-    .signup-wrapper{
-        width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
 
-    .signup-wrapperp span{
-
-        font-size: 8pt;
-        margin-left: 10px;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
-    }
-}
-@media screen  and (max-width: 375px){
-    .signup-wrapper{
-        width: 95%;
-        height: 50%;
-        padding: 15px;   
-    } 
-
-    .signup-wrapper-top span{
-
-        font-size: 10pt;
-        margin-left: 10px;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
-    }
-}

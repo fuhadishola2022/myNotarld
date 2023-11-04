@@ -52,6 +52,7 @@ label{
     font-size: 14pt;
     margin-bottom: 5px;
     color: #c5c7ca;
+    font-family: 'Inter', sans-serif;
     
 }
 
@@ -79,7 +80,7 @@ label{
     color: whitesmoke;
     font-size: 12pt;
     color: #c5c7ca;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     filter: opacity(40%);
     
 }
@@ -88,12 +89,23 @@ label{
     width: 90%;
     margin-top: 10px;
     padding: 15px;
-    background-color: rgb(148 163 184);
+    background-color: rgb(0, 61, 146);
     border: none;
     font-size: 13pt;
     color: white;
     border-radius: 5px;
     font-weight: 300;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rotateP{
+    position: relative;
+    left: 45%;
+}
+
+.login-btn:hover{
+    background-color: rgb(76, 76, 144);
 }
 
 form input:focus{
@@ -132,142 +144,95 @@ form input:focus{
     cursor: pointer;
 }
 
-@media screen  and (max-width: 1080px){
+@media (max-width: 1200px){
     .form-wrapper{
-        width: 60%;
-        height: 50%;
-        padding: 15px;   
+        width: 40%;
     }
-    
 }
-@media screen  and (max-width: 800px) and (max-width: 800){
+
+@media (max-width: 1080px){
     .form-wrapper{
-        width: 60%;
-        height: 50%;
-        padding: 15px;   
+        width: 47%;
+    }
+}
+
+@media (max-width: 950px) {
+    .form-wrapper{
+        width: 47%;
+    }
+}
+
+@media (max-width: 800px) {
+    .form-wrapper{
+        width: 50%;
+    }
+
+    .form-wrapper-top span{
+        font-size: 13pt;
     }
     
 }
 
-@media screen  and (max-width: 700px){
+@media (max-width: 700px) {
     .form-wrapper{
-        width: 60%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 600px){
-    .form-wrapper{
-        width: 80%;
-        height: 40%;
-        padding: 15px;   
-    } 
+        width: 63%;
+    }
+
+    .form-wrapper-top span{
+        font-size: 13pt;
+    }
+    
 }
 
-@media screen  and (max-width: 650px){
+@media (max-width: 600px) {
     .form-wrapper{
-        width: 67%;
-        height: 40%;
-        padding: 15px;   
-    } 
+        width: 63%;
+    }
+
+    .form-wrapper-top span{
+        display: none;
+    }
+    
 }
-@media screen  and (max-width: 550px){
+
+@media (max-width: 500px) {
     .form-wrapper{
-        width: 80%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 540px){
-    .form-wrapper{
-        width: 80%;
-        height: 60%;
-        padding: 15px;   
-    } 
-}
-@media screen  and (max-width: 480px){
-    .form-wrapper{
+        width: 75%;
+    }
+
+    .form-wrapper-top span{
+        display: none;
+    }
+
+    #email, #password{
         width: 90%;
-        height: 40%;
-        padding: 15px;   
-    } 
+        padding: 13px;
+        
+    }
+
+    .login-btn{
+        width: 90%;
+    }
+    
 }
-@media screen  and (max-width: 450px){
+
+@media (max-width: 360px) {
     .form-wrapper{
         width: 85%;
-        height: 40%;
-        padding: 15px;   
-    } 
-}
+    }
 
-@media screen  and (max-width: 414px){
-    .form-wrapper{
+    .form-wrapper-top span{
+        display: none;
+    }
+
+    #email, #password{
         width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
-
-    .form-wrapper-top span{
-
-        font-size: 12pt;
-       
+        padding: 13px;
+        
     }
 
-    .signup-wrapper-top .icon{
-        font-size: 12pt;
-    }
-}
-@media screen  and (max-width: 390px){
-    .form-wrapper{
+    .login-btn{
         width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
-
-    .form-wrapper-top span{
-
-        font-size: 10pt;
-        margin-left: 10px;
-       
     }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
-    }
-}
-@media screen  and (max-width: 360px){
-    .form-wrapper{
-        width: 90%;
-        height: 50%;
-        padding: 15px;   
-    } 
-
-    .form-wrapper-top span{
-
-        font-size: 8pt;
-        margin-left: 10px;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
-    }
-}
-@media screen  and (max-width: 375px){
-    .form-wrapper{
-        width: 95%;
-        height: 50%;
-        padding: 15px;   
-    } 
-
-    .form-wrapper-top span{
-
-        font-size: 10pt;
-        margin-left: 10px;
-       
-    }
-
-    .signup-wrapper-top .icon{
-        font-size: 10pt;
-    }
+    
 }

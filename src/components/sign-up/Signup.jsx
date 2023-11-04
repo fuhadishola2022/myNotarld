@@ -1,15 +1,67 @@
-import React from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import './signup.css'
 import Icon from '../../Icon'
 import {Link} from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import NoteContext from '../../NoteContext'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import Rotate from '../../spinner/Rotate'
+import { useNavigate } from 'react-router-dom'
+
+
+
+
 
 
 function Signup() {
 
+  const {submit, isChecking} = useContext(NoteContext)
+  const [checkUserName, setCheckUserName] = useState('')
+  const [userNameBool, setUserNameBool] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [userNameStatus, setUserNameStatus] = useState('')
+  const navigate = useNavigate()
+  
 
+
+  const fetchCheck = async () => {
+
+     await axios.post('https://notearld.onrender.com/user/check', {
+      username: checkUserName
+    }).then((stat) => {
+      setUserNameStatus(stat?.data?.message)
+      setUserNameBool(stat?.data?.status)
+      setIsLoading(false)
+      
+    }).catch((err) => {
+      setUserNameStatus(err?.response?.data?.message)
+      setUserNameBool(err?.response?.data?.status)
+      setIsLoading(false)
+    })
+        
+  }
+
+  
+
+  useEffect(() => {
+    if(checkUserName.length){
+      fetchCheck()
+      setIsLoading(true)
+    }
+    if(checkUserName.length === 0){
+      setUserNameStatus(null)
+      setIsLoading(false)
+    }
+  
+  },[checkUserName])
+
+  
+
+ 
+   
   const schema = yup.object().shape({
     name: yup.string().required('Required*'),
     username: yup.string().required('Required*'),
@@ -22,18 +74,14 @@ function Signup() {
     resolver: yupResolver(schema)
   })
 
-
-  const submit = (data) => {
-    console.log(data)
-  }
-
+      
 
 
   return (
     <div className='sign-Up'>
           <div className="signup-wrapper">
               <div className="signup-wrapper-top">
-                <Icon />
+              <Link to='/'><Icon className='icon'/></Link>
                 <span>[ SIGNUP ]</span>
               </div>
 
@@ -43,11 +91,14 @@ function Signup() {
                 <input type="text" name="name" id="name" placeholder='Please Enter Your Name Here' {...register('name')}/>
                 <p>{errors.name?.message}</p>
               </div>
+            
 
               <div className="username">
               <label htmlFor="username">Username</label>
-                <input type="text" name="username" id="username" placeholder='Please Enter Your Username Here' {...register('username')}/>
+                <input type="text" name="username" id="username"  placeholder='Please Enter Your Username Here' {...register('username')} onChange={(e) => setCheckUserName(e.target.value)}/>
                 <p>{errors.username?.message}</p>
+                {isLoading ? <Rotate /> : 
+                <span className={userNameBool === true ? "success" : "fail"}>{userNameStatus}</span>}
               </div>
 
               <div className="user-email">
@@ -67,12 +118,13 @@ function Signup() {
                 <input type="password" name="user-confirm-password" id="user-confirm-password" placeholder='Confirm Password' {...register('confirmPassword')}/>
                 <p>{errors.confirmPassword?.message}</p>
               </div>
-              <button type='submit' id='reg-sumbit'>Register</button>
+              <button type='submit' id='reg-sumbit' disabled={userNameBool ? false : true}>{isChecking ? <p className='rotateP'>{<Rotate />}</p> : "Register"}</button>
 
               <div className="login-opt">
                 <span className='select'>Have an account ? <Link to='/form'>Login</Link></span>
                 
                 </div>
+                <ToastContainer />
         </form>
           </div>
 

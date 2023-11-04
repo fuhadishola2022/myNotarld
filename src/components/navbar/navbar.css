@@ -10,7 +10,7 @@
 }
 
 .navbar-left{
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 .navbar-left a{
@@ -22,11 +22,13 @@
 }
 
 .navbar-right{
-    margin-right: 10%;
+    margin-right: 15%;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.navbar-right a{
+/* .navbar-right a{
     padding: 10px;
     border-radius: 10px;
     color: white;
@@ -39,30 +41,224 @@
     margin-right: 15px;
     text-align: center;
     text-decoration: none;
-}
+} */
 
-.navbar-right button{
+.login{
     padding: 10px;
     border-radius: 10px;
     color: white;
-    width: 90px;
+    width: 190px;
     font-weight: 400;
     border: none;
     font-size: 12pt;
     cursor: pointer;
+    background: blue;
+    margin-right: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: none
+}
+
+.create-post{
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    width: 120px;
+    font-weight: 400;
+    border: none;
+    font-size: 12pt;
+    cursor: pointer;
+    background: blue;
+    margin-top: 5px;
+    margin-right: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    height: 40px;
+}
+
+.create-post a{
+    text-decoration: none;
+    color: white;
 }
 
 
 
 
-.navbar-right a:hover{
+
+
+.login:hover{
     background-color: rgb(1, 1, 138);
 }
 
 
 .Sign-Up{
-    background: none !important;
-    color: whitesmoke;
-    border: 1px solid whitesmoke !important;
+    padding: 10px;
+    border-radius: 10px;
+    color: darkgray;
+    width: 120%;
+    font-weight: 400;
+    border: none;
+    font-size: 12pt;
+    cursor: pointer;
+    background: none;
+    margin-right: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid darkgrey;
+}
+
+.Sign-Up:hover{
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+.user-holder{
+   display: flex; 
+}
+
+.user-icon{
+    background: none;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.userOptions{
+    height: 90px;
+    width: 110px;
+    position: absolute;
+    top: 10%;
+    left: 83%;
+    text-align: center;
+    background-color: rgb(39 41 45);
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    z-index: 100;
+}
+
+.user-link-holder{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid white;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.user-link-text{
+    text-decoration: none;
+    padding: 15px;
+    font-family: inter, sans-serif;
+    color: darkgray;
+    font-size: 13pt;
+    position: relative; 
+    right: 8px;
+    
+}
+
+.pro-icon{
+    font-size: 15pt;
+    color: blue;
+    margin-top: 5px;
+}
+
+.user-logout-btn{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    white-space: nowrap;
+    display: flex;
+    
+}
+
+.pro-icon-log{
+    font-size: 15pt;
+    color: red;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.user-logout-btn button{
+    background: none;
+    border: none;
+    font-family: inter, sans-serif;
+    color: darkgray;
+    font-size: 13pt; 
+    margin-right: 10px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 1535px){
+    .navbar-left{
+        margin-left: 10%;
+    }
+
+    .navbar-right{
+        margin-right: 10%;
+    }
+    
+    
+}
+@media (max-width: 1280px){
+    .navbar-left{
+        margin-left: 5%;
+    }
+
+
+    .navbar-right{
+        margin-right: 5%;
+    }
+    
+}
+
+@media (max-width: 425px){
+    .create-post{
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        width: 100px !important;
+        font-weight: 400;
+        border: none;
+        font-size: 10pt !important;
+        cursor: pointer;
+        background: blue;
+        margin-top: 5px;
+        margin-right: 15px;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        height: 40px;
+    }
+
+    .userOptions{
+        left: 70%;
+    }
+}
+
+@media (max-width: 365px){
+    .navbar-left{
+        margin-left: -5%;
+    }
+
+
+    .navbar-right{
+        margin-right: -5%;
+    }
+
+    .login{
+        margin-right: 5px;
+       
+    }
+
+    .userOptions{
+        left: 70%;
+    }
+    
+    
 }
 
