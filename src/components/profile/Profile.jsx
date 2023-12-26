@@ -43,7 +43,7 @@ function Profile() {
     
     
 
-    const resDate = (postTime) => {
+    const dateInfo = (postTime) => {
 
         const dateMoment = moment(postTime)
         return(
@@ -90,11 +90,11 @@ function Profile() {
 
              {isLoading && <Spinner />}
             {toggle === 1 ? 
-            (data?.data?.posts.map((pos) => {
+            (data?.data?.posts.map((pos, index) => {
                 if(pos.user._id === userLoggedIn?.user.id){  
                     return (
           
-                        <div className='containerP' key={pos._id}>
+                        <div className='containerP' key={index}>
                             <div className="post-holderP">
                               <div className="top-personal">
                                   <PostIcon />
@@ -123,7 +123,7 @@ function Profile() {
               
               
                               <div className="bottom">
-                                {resDate(pos.post_time)}
+                                {dateInfo(pos.post_time)}
                               </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@ function Profile() {
             : <h1 className='empty-fave'>Favourite feature in development</h1>}
 
             {showPost ? <Create /> : null}
-            <ToastContainer />
+            
     </div>
   )
 }

@@ -8,44 +8,14 @@ import Rotate from '../../spinner/Rotate';
 import { useNavigate } from 'react-router-dom';
 
 function Create() {
-    const {userLoggedIn, toggleShowPost, setShowPost} = useContext(NoteContext)
+    const {userLoggedIn, toggleShowPost, setShowPost, successNotification, errorNotification} = useContext(NoteContext)
     const [isLoading, setIsLoading] = useState(false)
     const [postText, setPostText] = useState('')
     const [postOpt, setPostOpt] = useState('')
     const navigate = useNavigate()
 
-    const successPostNotification = () => {
-    toast.success('Post Created Successfully!', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
 
-  const errorPostNotification = () => {
-    toast.error('Something went wrong!', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
 
-    }
-
-    // const postData = {
-    //         content: postText,
-    //         visibility: postOpt,
-    //         user: userLoggedIn.user.id
-    // }
 
     // Creating A new Post
 
@@ -64,7 +34,7 @@ function Create() {
         }).then((postres) => {
             console.log(postres)
             setIsLoading(false)
-            successPostNotification()
+            successNotification('Post Created Successfully!')
             setTimeout(() => {
                 navigate('/')
                 setShowPost(false)
@@ -72,15 +42,10 @@ function Create() {
         }).catch((err) => {
             console.log(err?.message)
             setIsLoading(false)
-            errorPostNotification()
+            errorNotification('Something went wrong!')
         })
     }
 
-     
-
-   
-
-   
 
   return (
     <div className='create'>

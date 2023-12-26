@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import {NoteContextProvider} from './NoteContext'
 import Profile from './components/profile/Profile';
-import Create from './components/create-post/Create';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Query = new QueryClient({defaultOptions: {
   queries: {
@@ -31,6 +31,9 @@ function App() {
         </Router>
         </QueryClientProvider>
       </NoteContextProvider>
+
+      <ToastContainer />
+
     </div>
   );
 }

@@ -31,9 +31,9 @@ function Main() {
       return <h2 style={{position: 'relative', left: '45%', color: 'red'}}>{error.message}</h2>
     }
 
-    const dateVariable = data?.data.posts
+    
 
-    const resDate = (postTime) => {
+    const dateInfo = (postTime) => {
 
       const dateMoment = moment(postTime)
       return(
@@ -46,15 +46,15 @@ function Main() {
       
     }
 
-    // console.log(data.data.posts)
+    
 
   return (
     <div className='main'>
-       {data?.data.posts.map((post) => {
+       {data?.data.posts.map((post, index) => {
         return (
           
           <div className='container'>
-              <div className={post.visibility === "private" ? "post-holderr" : "post-holder"} key={post.user?._id}>
+              <div className={post.visibility === "private" ? "post-holderr" : "post-holder"} key={index}>
                 <div className={post.user._id === userLoggedIn?.user.id ? "top-personal" : "top"}>
                     <PostIcon />
 
@@ -82,14 +82,14 @@ function Main() {
 
 
                 <div className="bottom">
-                  {resDate(post.post_time)}
+                  {dateInfo(post.post_time)}
                 </div>
               </div>
           </div>
         )
        })}
 
-       <ToastContainer />
+       
     </div>
   )
 }

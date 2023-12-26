@@ -124,7 +124,7 @@ function Signup() {
                 <span className='select'>Have an account ? <Link to='/form'>Login</Link></span>
                 
                 </div>
-                <ToastContainer />
+                
         </form>
           </div>
 

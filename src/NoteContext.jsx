@@ -1,15 +1,15 @@
 import React, { createContext, useState } from 'react'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
-// import { useNavigate } from 'react-router-dom';
+
 
 
 
 export const NoteContext = createContext(null)
 
 
-const successNotification = () => {
-  toast.success('New User Created', {
+const successNotification = (success) => {
+  toast.success(success, {
     position: "top-right",
     autoClose: 2000,
     hideProgressBar: false,
@@ -21,8 +21,10 @@ const successNotification = () => {
     });
 }
 
-const postsuccessNotification = (postSuccess) => {
-  toast.success(postSuccess, {
+
+
+const errorNotification = (error) => {
+  toast.error(error, {
     position: "top-right",
     autoClose: 2000,
     hideProgressBar: false,
@@ -34,31 +36,7 @@ const postsuccessNotification = (postSuccess) => {
     });
 }
 
-const errorNotification = () => {
-  toast.error('Something went wrong', {
-    position: "top-right",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    });
-}
 
-const posterrorNotification = (postError) => {
-  toast.error(postError, {
-    position: "top-right",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    });
-}
 
 export function NoteContextProvider(props) {
   const [isChecking, setIsChecking] = useState(false)
@@ -86,11 +64,11 @@ export function NoteContextProvider(props) {
         }).then((res) => {
           console.log(res.data)
           setIsChecking(false)
-          successNotification()
+          successNotification('New User Created')
           
         }).catch((err) => {
           if(err){
-            errorNotification()
+            errorNotification('Something went wrong')
             setIsChecking(false)
           }
         })
@@ -107,13 +85,13 @@ export function NoteContextProvider(props) {
         })
         .then((deleteRes) => {
             console.log(deleteRes.data)
-            postsuccessNotification(deleteRes.data.message)
             setIsLoadingToDelete(false)
+            successNotification(deleteRes.data.message)
             window.location.reload()
             
         }).catch((error) => {
           if(error){
-            posterrorNotification('Failed To Delete Post')
+            errorNotification('Failed To Delete Post')
             setIsLoadingToDelete(false)
           }
         })
@@ -133,7 +111,9 @@ export function NoteContextProvider(props) {
         showPost, 
         toggleShowPost, 
         setShowPost,
-        isLoadingToDelete
+        isLoadingToDelete,
+        successNotification,
+        errorNotification
       }
 
   return (

@@ -13,7 +13,7 @@
 }
 
 .post-holder{
-    width: 100%;
+    width: 60%;
     height: 180px;
     border: 1px solid rgb(52, 52, 52);
     margin: 10px auto;
@@ -63,14 +63,14 @@
 
 @media screen and (max-width: 1280px) {
     .post-holder{
-        width: 70% !important;      
+        width: 70%;      
     }
   
 
 }
 @media screen and (max-width: 1024px) {
     .post-holder{
-        width: 80% !important;      
+        width: 80%;      
     }
   
 
@@ -78,19 +78,19 @@
 
 @media screen and (max-width: 365px) {
     .post-holder{
-        width: 90% !important;      
+        width: 90%;      
     }
 
     .user-details{
-        font-size: 12pt !important;
+        font-size: 12pt;
     }
 
     .content{
-        font-size: 11pt !important;
+        font-size: 11pt;
     }
 
     .bottom{
-        font-size: 10pt !important;
+        font-size: 10pt;
     }
   
 

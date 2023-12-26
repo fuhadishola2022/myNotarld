@@ -1,49 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import './form.css'
 import {Link} from 'react-router-dom'
 import Icon from '../../Icon'
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Rotate from '../../spinner/Rotate'
 import { useNavigate } from 'react-router-dom'
+import NoteContext from '../../NoteContext'
+
 
 
 
 
 function Form() {
 
+  const {submit, isChecking, successNotification, errorNotification} = useContext(NoteContext)
   const [emailText, setEmailText] = useState('')
   const [passwordText, setPasswordText] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
-
-  const successNotification = () => {
-    toast.success('Login Successful', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
-
-  const errorNotification = () => {
-    toast.error('Auth Failed!', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-  }
 
   const loginHandle = async (e) => {
     setIsLoading(true)
@@ -53,7 +29,7 @@ function Form() {
       password: passwordText
     }).then((response) => {
       console.log(response.data)
-      successNotification()
+      successNotification('Login Successful')
       localStorage.setItem("User", JSON.stringify(response.data))
       setIsLoading(false)
       setTimeout(() => {
@@ -64,7 +40,7 @@ function Form() {
     }).catch((error) => {
       if(error){
         if(error){
-          errorNotification()
+          errorNotification('Auth Failed!')
           setIsLoading(false)
         }
       }
@@ -112,7 +88,7 @@ function Form() {
                 <Link to='/signup'>Register</Link>
                 </div>
 
-                <ToastContainer />
+                
             </form>
          </div>
     </div>
